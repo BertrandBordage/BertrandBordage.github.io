@@ -14,7 +14,7 @@ Avoid docker-py |       Bertrand Bordage
 
       <link rel="alternate" type="application/atom+xml"
             title="Bertrand Bordage" href="http://blog.bordage.pro/feeds/all.atom.xml" />
-      <link rel="stylesheet" href="http://blog.bordage.pro/theme/less/styles.min.css?39a54618/">
+      <link rel="stylesheet" href="http://blog.bordage.pro/theme/less/styles.min.css?c63c6500/">
   </head>
   <body>
 
@@ -180,57 +180,7 @@ with a time limit of 2 seconds:</p>
 docker run --rm ubuntu:14.04 python3 -c [some_code_here]
 </pre>
 <p>And ended up with something like this:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51</pre></div></td><td class="code"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">contextmanager</span>
 <span class="kn">import</span> <span class="nn">signal</span>
 
 <span class="kn">import</span> <span class="nn">docker</span>
@@ -282,7 +232,7 @@ docker run --rm ubuntu:14.04 python3 -c [some_code_here]
 <span class="k">assert</span> <span class="n">execute</span><span class="p">(</span><span class="s">&quot;print(&#39;test1&#39;)&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s">&#39;test1</span><span class="se">\n</span><span class="s">&#39;</span>
 <span class="k">assert</span> <span class="n">execute</span><span class="p">(</span><span class="s">&quot;while True: print(&#39;test2&#39;)&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;test2</span><span class="se">\n</span><span class="s">&#39;</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
 </pre></div>
-</td></tr></table><p>At least I had a working version!  Docker was still throwing me some random
+<p>At least I had a working version!  Docker was still throwing me some random
 warning, but I got what I wanted.</p>
 <p>But then something wonderful happened! A docker-py update!  Version 0.3.2,
 that should be a few bugfixes.  In my case it wasn’t, I had different bugs.
@@ -300,36 +250,7 @@ I was using Docker 1.0.0, and therefore API version 1.12.</p>
 docker-py away in favour of a classical <tt class="docutils literal">subprocess.Popen</tt>.  It took me an
 hour to get exactly what I wanted.</p>
 <p>And it consists in fewer lines:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30</pre></div></td><td class="code"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">subprocess</span> <span class="kn">import</span> <span class="n">Popen</span><span class="p">,</span> <span class="n">PIPE</span>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">subprocess</span> <span class="kn">import</span> <span class="n">Popen</span><span class="p">,</span> <span class="n">PIPE</span>
 
 
 <span class="k">def</span> <span class="nf">kill_and_remove</span><span class="p">(</span><span class="n">ctr_name</span><span class="p">):</span>
@@ -360,7 +281,7 @@ hour to get exactly what I wanted.</p>
 <span class="k">assert</span> <span class="n">execute</span><span class="p">(</span><span class="s">&quot;print(&#39;test1&#39;)&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s">&#39;test1</span><span class="se">\n</span><span class="s">&#39;</span>
 <span class="k">assert</span> <span class="n">execute</span><span class="p">(</span><span class="s">&quot;while True: print(&#39;test2&#39;)&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;test2</span><span class="se">\n</span><span class="s">&#39;</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 </div>
 <div class="section" id="conclusion">
 <h2>Conclusion</h2>
@@ -508,7 +429,7 @@ compare it with 0.4.0…</td>
 </nav>    </footer>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script>
       $(function () {
         $('[title]').tooltip();

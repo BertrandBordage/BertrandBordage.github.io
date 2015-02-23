@@ -1,5 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Bertrand Bordage</title><link href="http://blog.bordage.pro/" rel="alternate"></link><link href="http://blog.bordage.pro/feeds/bertrand-bordage.atom.xml" rel="self"></link><id>http://blog.bordage.pro/</id><updated>2014-07-30T00:00:00+02:00</updated><entry><title>Avoid docker-py</title><link href="http://blog.bordage.pro/avoid-docker-py/" rel="alternate"></link><updated>2014-07-30T00:00:00+02:00</updated><author><name>Bertrand Bordage</name></author><id>tag:blog.bordage.pro,2014-07-27:avoid-docker-py/</id><summary type="html">&lt;div class="section" id="whats-docker"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Bertrand Bordage</title><link href="http://blog.bordage.pro/" rel="alternate"></link><link href="http://blog.bordage.pro/feeds/bertrand-bordage.atom.xml" rel="self"></link><id>http://blog.bordage.pro/</id><updated>2015-02-23T00:00:00+01:00</updated><entry><title>Django-cachalot 1.0.0 release candidate</title><link href="http://blog.bordage.pro/django-cachalot-rc/" rel="alternate"></link><updated>2015-02-23T00:00:00+01:00</updated><author><name>Bertrand Bordage</name></author><id>tag:blog.bordage.pro,2015-02-23:django-cachalot-rc/</id><summary type="html">&lt;p&gt;Hi,&lt;/p&gt;
+&lt;p&gt;I’m Bertrand, the creator of &lt;a class="reference external" href="https://github.com/BertrandBordage/django-cachalot"&gt;django-cachalot&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It’s been 5 months since I started this project,
+and it’s now ready for a safe production use.
+However, I want cachalot to be perfect.&lt;/p&gt;
+&lt;p&gt;That’s why I just uploaded to PyPI a release candidate for cachalot 1.0.0.
+&lt;strong&gt;I need your help to test it.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You can even &lt;strong&gt;earn 30 €&lt;/strong&gt; by reporting an invalidation issue!
+But you have to be quick: 1.0.0 will be released &lt;strong&gt;15 March 2015&lt;/strong&gt;
+if no invalidation issue is found.&lt;/p&gt;
+&lt;p&gt;I need you to:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://django-cachalot.readthedocs.org/en/latest/quickstart.html"&gt;install cachalot&lt;/a&gt; on your development server&lt;/li&gt;
+&lt;li&gt;open a page of your project where you use a complex query&lt;/li&gt;
+&lt;li&gt;change something that should change the displayed result of the complex query&lt;/li&gt;
+&lt;li&gt;refresh the page with the complex query to see if the displayed result has changed as expected&lt;/li&gt;
+&lt;li&gt;if not, &lt;a class="reference external" href="https://github.com/BertrandBordage/django-cachalot/issues/new"&gt;create a new GitHub issue&lt;/a&gt;
+with a minimal example, and I’ll send you 30 € if I or someone else
+can reproduce the bug&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Regards,&lt;/div&gt;
+&lt;div class="line"&gt;Bertrand&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="django"></category><category term="django-cachalot"></category></entry><entry><title>Baidu illegal activities</title><link href="http://blog.bordage.pro/baidu-illegal-activities/" rel="alternate"></link><updated>2014-09-23T00:00:00+02:00</updated><author><name>Bertrand Bordage</name></author><id>tag:blog.bordage.pro,2014-09-23:baidu-illegal-activities/</id><summary type="html">&lt;div class="section" id="the-facts"&gt;
+&lt;h2&gt;The facts&lt;/h2&gt;
+&lt;div class="section" id="whats-baidu"&gt;
+&lt;h3&gt;What’s Baidu?&lt;/h3&gt;
+&lt;p&gt;Baidu is &lt;a class="reference external" href="http://chineseseoshifu.com/blog/top-5-chinese-search-engines.html"&gt;the most widely&lt;/a&gt;
+used search engine in China.
+As far as I know, it’s as popular in China as Google is in western countries.
+Like any other search engine, Baidu has thousands of bots crawling the web
+in order to index everything.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="and-why-do-i-care-about-it"&gt;
+&lt;h3&gt;And why do I care about it?&lt;/h3&gt;
+&lt;p&gt;In my daily job, I read dozens of log entries reporting errors, dead links, and
+suspicious operations.  In my case, suspicious operations means attempts of
+&lt;a class="reference external" href="http://en.wikipedia.org/wiki/Spoofing_attack"&gt;IP &amp;amp; referer spoofing&lt;/a&gt;,
+&lt;a class="reference external" href="http://en.wikipedia.org/wiki/Denial-of-service_attack"&gt;(D)DOS&lt;/a&gt;,
+and vulnerable software discovery.  The latter means that a bot or someone asks
+for pages containing a proof that you use a given version of WordPress, VTiger,
+PHPMyAdmin, or any other widely used and quite vulnerable tool.&lt;/p&gt;
+&lt;p&gt;Most of the time, those reports are triggered by search engine bots like
+Google, Bing, Yahoo, or the awful
+&lt;abbr title="Bibliothèque nationale de France"&gt;BnF&lt;/abbr&gt; bot (it fails to rebuild a lot
+of URLs from relative links…).&lt;/p&gt;
+&lt;p&gt;Being indexed by a search engine is generally considered as a good thing:
+if your website can’t be found in a simple query on any major search engine,
+nobody will reach it.&lt;/p&gt;
+&lt;p&gt;If your website has an international scope, being indexed by Baidu may be
+important, as 500 million people probably use it as their browser homepage.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="baidu-crawls-way-too-much"&gt;
+&lt;h3&gt;Baidu crawls… Way too much.&lt;/h3&gt;
+&lt;p&gt;Some nights like tonight, Santa Baidu comes down the chimney and leaves its
+marvellous presents in my mailbox.
+&lt;strong&gt;Thousands of suspicious operations alerts!&lt;/strong&gt;
+Cool, it brought me fifty strange requests per minute during all the night!
+And even more impressive, each one is different!&lt;/p&gt;
+&lt;p&gt;It starts with a classical &lt;tt class="docutils literal"&gt;/robots.txt&lt;/tt&gt;, the best way to find weak points you
+shouldn’t look at.&lt;/p&gt;
+&lt;p&gt;And then it starts spamming stupid PHP/ASP/JSP requests.
+I never even used one of these!  Baidu, you offend me.
+Here’s a tiny sample of what it asks:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+/do/reg.php
+/wp-content/themes/twentyten/style.css
+/lionsky_client/WebHtmlEditor/1_7_2006_1020/Theme/Office_Tinge/WebHtmlEditor.css
+/ask
+/admin/help/online_help_1.htm
+/Providers/HtmlEditorProviders/Fck/fcklinkgallery.aspx
+/安装说明.txt
+/data/config.js
+/jsp/cis4/js/common/CTRSHTMLElement.js
+/digg.php
+/plugin/backupdb/plugin.xml
+/siteserver/login.aspx
+/a_d/install/data.sql
+/admin/tpls/tpls/main/default/index.tpl
+/ThinkPHP/LICENSE.txt
+/install/data/sql/db_full.sql
+/wcm/app/js/source/wcmlib/WCMConstants.js
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="an-explanation"&gt;
+&lt;h2&gt;An explanation&lt;/h2&gt;
+&lt;div class="section" id="is-that-so-important"&gt;
+&lt;h3&gt;Is that so important?&lt;/h3&gt;
+&lt;p&gt;Yes.&lt;/p&gt;
+&lt;p&gt;Regular search engine bots don’t do that.  They don’t ask for tens of thousands
+of pages in a few hours.  They don’t go to a page that isn’t mentioned
+by any other page.&lt;/p&gt;
+&lt;p&gt;One could argue that it’s not dangerous since these are just regular
+HTTP requests: no code injection, no denial of service, no IP spoofing, etc.
+That’s right.  And that’s why it’s even more dangerous: Baidu obviously has
+a tremendous catalog of software footprints.  Without a single link to those
+pages, it knows exactly where to look to know if you’re running PHP, ASP, JSP,
+which libraries, and more important, which version of all these.&lt;/p&gt;
+&lt;p&gt;Of course, these data are totally useless for a search engine; except if it’s
+able to tell the user whether a website is technically trustworthy.
+But that’s very unlikely.  So why all this?&lt;/p&gt;
+&lt;p&gt;Baidu doesn’t want to break your website.  It wants to be &lt;em&gt;able&lt;/em&gt; to do it
+at any moment.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="a-cyberwarfare-weapon"&gt;
+&lt;h3&gt;A cyberwarfare weapon?&lt;/h3&gt;
+&lt;p&gt;Probably…  It could also be a dissuasive weapon, like nuclear missiles.&lt;/p&gt;
+&lt;p&gt;Do you know &lt;a class="reference external" href="http://www.shodanhq.com/"&gt;Shodan&lt;/a&gt;?
+It’s a very special search engine.
+It allows you to find extremely weak servers.
+Especially webcam servers without password or with default ones.&lt;/p&gt;
+&lt;p&gt;That’s truly shocking, but you can spy people you don’t know, learn everything
+about their life, and they’re not even aware of being filmed.
+If you search and hack enough, I guess you can become the administrator
+of a few servers across the globe.&lt;/p&gt;
+&lt;p&gt;Or you can even control &lt;strong&gt;power plants&lt;/strong&gt;, as they’re proud to mention.
+That’s obviously not so easy, but it can be done.
+It was done in 2010, when &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Stuxnet"&gt;&amp;quot;someone&amp;quot; partially destroyed an Iranian
+nuclear plant&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As you may know, the US &lt;abbr title="National Security Agency"&gt;NSA&lt;/abbr&gt; &lt;a class="reference external" href="http://en.wikipedia.org/wiki/NSA_ANT_catalog"&gt;exploits such
+vulnerabilities and even develops hardware&lt;/a&gt; to make it easier for them
+to infiltrate any online computer.&lt;/p&gt;
+&lt;p&gt;I honestly don’t have any proof, but I’m sure that China is doing exactly the
+same kind of spying &amp;amp; infiltration with tools like Baidu.
+I don’t say that Baidu is a covering for illegal government operations.
+Maybe all this wasn’t Baidu, but another chinese bot pretending being Baidu.
+Or maybe Baidu is simply lead by a bunch of irresponsible hackers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="the-solution"&gt;
+&lt;h2&gt;The solution&lt;/h2&gt;
+&lt;p&gt;Block Baidu, as I did.&lt;/p&gt;
+&lt;p&gt;In Django, I simply made a middleware.
+Add &lt;tt class="docutils literal"&gt;'your_project.middleware.ExcludeSuspiciousRequestsMiddleware',&lt;/tt&gt; to your
+&lt;tt class="docutils literal"&gt;MIDDLEWARE_CLASSES&lt;/tt&gt; and put the following in &lt;tt class="docutils literal"&gt;your_project/middleware.py&lt;/tt&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.conf&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;settings&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.http&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;HttpResponse&lt;/span&gt;
+
+
+&lt;span class="n"&gt;BANNED_REFERERS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="s"&gt;&amp;#39;http://www.baidu.com&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;ExcludeSuspiciousRequestsMiddleware&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="nd"&gt;@staticmethod&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;process_request&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;META&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;HTTP_REFERER&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;BANNED_REFERERS&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;HttpResponse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+                &lt;span class="s"&gt;&amp;#39;You have been banned from our server. If you think this is a &amp;#39;&lt;/span&gt;
+                &lt;span class="s"&gt;&amp;#39;miscarriage of justice, ask the admin on &amp;#39;&lt;/span&gt;
+                &lt;span class="s"&gt;&amp;#39;&amp;lt;a href=&amp;quot;mailto:%(@)s&amp;quot;&amp;gt;%(@)s&amp;lt;/a&amp;gt;.&amp;#39;&lt;/span&gt;
+                &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;@&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ADMINS&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]},&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;403&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="security"></category><category term="search engine"></category></entry><entry><title>Avoid docker-py</title><link href="http://blog.bordage.pro/avoid-docker-py/" rel="alternate"></link><updated>2014-07-30T00:00:00+02:00</updated><author><name>Bertrand Bordage</name></author><id>tag:blog.bordage.pro,2014-07-27:avoid-docker-py/</id><summary type="html">&lt;div class="section" id="whats-docker"&gt;
 &lt;h2&gt;What’s Docker?&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://www.docker.com/"&gt;Docker&lt;/a&gt; allows you to easily deploy
 a web application anywhere without worrying about which OS or libraries are
@@ -88,57 +245,7 @@ with a time limit of 2 seconds:&lt;/p&gt;
 docker run --rm ubuntu:14.04 python3 -c [some_code_here]
 &lt;/pre&gt;
 &lt;p&gt;And ended up with something like this:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;contextlib&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;contextmanager&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;contextlib&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;contextmanager&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;signal&lt;/span&gt;
 
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;docker&lt;/span&gt;
@@ -190,7 +297,7 @@ docker run --rm ubuntu:14.04 python3 -c [some_code_here]
 &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="n"&gt;execute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;print(&amp;#39;test1&amp;#39;)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;test1&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt;
 &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="n"&gt;execute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;while True: print(&amp;#39;test2&amp;#39;)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;startswith&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;test2&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;At least I had a working version!  Docker was still throwing me some random
+&lt;p&gt;At least I had a working version!  Docker was still throwing me some random
 warning, but I got what I wanted.&lt;/p&gt;
 &lt;p&gt;But then something wonderful happened! A docker-py update!  Version 0.3.2,
 that should be a few bugfixes.  In my case it wasn’t, I had different bugs.
@@ -208,36 +315,7 @@ I was using Docker 1.0.0, and therefore API version 1.12.&lt;/p&gt;
 docker-py away in favour of a classical &lt;tt class="docutils literal"&gt;subprocess.Popen&lt;/tt&gt;.  It took me an
 hour to get exactly what I wanted.&lt;/p&gt;
 &lt;p&gt;And it consists in fewer lines:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;subprocess&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Popen&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;PIPE&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;subprocess&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Popen&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;PIPE&lt;/span&gt;
 
 
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;kill_and_remove&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ctr_name&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -268,7 +346,7 @@ hour to get exactly what I wanted.&lt;/p&gt;
 &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="n"&gt;execute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;print(&amp;#39;test1&amp;#39;)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;test1&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt;
 &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="n"&gt;execute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;while True: print(&amp;#39;test2&amp;#39;)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;startswith&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;test2&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="conclusion"&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;

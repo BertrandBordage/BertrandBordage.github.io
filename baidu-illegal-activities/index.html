@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content="Pelican">
+  <meta name="author" content="Bertrand Bordage" />
+  <meta name="description" content="You’re being indhacked." />
+  <meta name="keywords" content="security, search engine" />
+    <title>
+Baidu illegal activities |       Bertrand Bordage
+    </title>
+
+      <link rel="alternate" type="application/atom+xml"
+            title="Bertrand Bordage" href="http://blog.bordage.pro/feeds/all.atom.xml" />
+      <link rel="stylesheet" href="http://blog.bordage.pro/theme/less/styles.min.css?c63c6500/">
+  </head>
+  <body>
+
+    <header>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://blog.bordage.pro/">Bertrand Bordage</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav navbar-left">
+        <li>
+          <a href="http://blog.bordage.pro/tags/">
+            <i class="fa fa-tags"></i> Tags
+          </a>
+        </li>
+        <li>
+          <a href="http://blog.bordage.pro/archives/">
+            <i class="fa fa-archive"></i> Archives
+          </a>
+        </li>
+      </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="http://blog.bordage.pro/pages/about-me/">About me</a>
+            </li>
+        </ul>
+    </div>
+  </div>
+</nav>    </header>
+
+    <section class="container">
+
+  <article itemscope itemtype="http://schema.org/Article">
+
+    <header class="page-header">
+      <div class="row">
+        <h1 class="col-sm-8 col-md-9">
+          <span itemprop="name">
+            Baidu illegal activities
+          </span>
+            <meta itemprop="author" content="Bertrand Bordage" />
+        </h1>
+
+        <aside class="col-sm-4 col-md-3">
+<span class="text-muted">
+  <i class="fa fa-calendar fa-fw"></i>
+  <time datetime="2014-09-23" itemprop="datePublished"
+        title="Publication">
+    23 September 2014
+  </time>
+</span><br />
+  <i class="fa fa-tags fa-fw text-muted"></i>
+    <a class="label label-default" href="http://blog.bordage.pro/tag/security/"
+       itemprop="keywords">security</a>
+    <a class="label label-default" href="http://blog.bordage.pro/tag/search-engine/"
+       itemprop="keywords">search engine</a>
+        </aside>
+      </div>
+    </header>
+
+    <div itemprop="articleBody">
+      <div class="section" id="the-facts">
+<h2>The facts</h2>
+<div class="section" id="whats-baidu">
+<h3>What’s Baidu?</h3>
+<p>Baidu is <a class="reference external" href="http://chineseseoshifu.com/blog/top-5-chinese-search-engines.html">the most widely</a>
+used search engine in China.
+As far as I know, it’s as popular in China as Google is in western countries.
+Like any other search engine, Baidu has thousands of bots crawling the web
+in order to index everything.</p>
+</div>
+<div class="section" id="and-why-do-i-care-about-it">
+<h3>And why do I care about it?</h3>
+<p>In my daily job, I read dozens of log entries reporting errors, dead links, and
+suspicious operations.  In my case, suspicious operations means attempts of
+<a class="reference external" href="http://en.wikipedia.org/wiki/Spoofing_attack">IP &amp; referer spoofing</a>,
+<a class="reference external" href="http://en.wikipedia.org/wiki/Denial-of-service_attack">(D)DOS</a>,
+and vulnerable software discovery.  The latter means that a bot or someone asks
+for pages containing a proof that you use a given version of WordPress, VTiger,
+PHPMyAdmin, or any other widely used and quite vulnerable tool.</p>
+<p>Most of the time, those reports are triggered by search engine bots like
+Google, Bing, Yahoo, or the awful
+<abbr title="Bibliothèque nationale de France">BnF</abbr> bot (it fails to rebuild a lot
+of URLs from relative links…).</p>
+<p>Being indexed by a search engine is generally considered as a good thing:
+if your website can’t be found in a simple query on any major search engine,
+nobody will reach it.</p>
+<p>If your website has an international scope, being indexed by Baidu may be
+important, as 500 million people probably use it as their browser homepage.</p>
+</div>
+<div class="section" id="baidu-crawls-way-too-much">
+<h3>Baidu crawls… Way too much.</h3>
+<p>Some nights like tonight, Santa Baidu comes down the chimney and leaves its
+marvellous presents in my mailbox.
+<strong>Thousands of suspicious operations alerts!</strong>
+Cool, it brought me fifty strange requests per minute during all the night!
+And even more impressive, each one is different!</p>
+<p>It starts with a classical <tt class="docutils literal">/robots.txt</tt>, the best way to find weak points you
+shouldn’t look at.</p>
+<p>And then it starts spamming stupid PHP/ASP/JSP requests.
+I never even used one of these!  Baidu, you offend me.
+Here’s a tiny sample of what it asks:</p>
+<pre class="literal-block">
+/do/reg.php
+/wp-content/themes/twentyten/style.css
+/lionsky_client/WebHtmlEditor/1_7_2006_1020/Theme/Office_Tinge/WebHtmlEditor.css
+/ask
+/admin/help/online_help_1.htm
+/Providers/HtmlEditorProviders/Fck/fcklinkgallery.aspx
+/安装说明.txt
+/data/config.js
+/jsp/cis4/js/common/CTRSHTMLElement.js
+/digg.php
+/plugin/backupdb/plugin.xml
+/siteserver/login.aspx
+/a_d/install/data.sql
+/admin/tpls/tpls/main/default/index.tpl
+/ThinkPHP/LICENSE.txt
+/install/data/sql/db_full.sql
+/wcm/app/js/source/wcmlib/WCMConstants.js
+</pre>
+</div>
+</div>
+<div class="section" id="an-explanation">
+<h2>An explanation</h2>
+<div class="section" id="is-that-so-important">
+<h3>Is that so important?</h3>
+<p>Yes.</p>
+<p>Regular search engine bots don’t do that.  They don’t ask for tens of thousands
+of pages in a few hours.  They don’t go to a page that isn’t mentioned
+by any other page.</p>
+<p>One could argue that it’s not dangerous since these are just regular
+HTTP requests: no code injection, no denial of service, no IP spoofing, etc.
+That’s right.  And that’s why it’s even more dangerous: Baidu obviously has
+a tremendous catalog of software footprints.  Without a single link to those
+pages, it knows exactly where to look to know if you’re running PHP, ASP, JSP,
+which libraries, and more important, which version of all these.</p>
+<p>Of course, these data are totally useless for a search engine; except if it’s
+able to tell the user whether a website is technically trustworthy.
+But that’s very unlikely.  So why all this?</p>
+<p>Baidu doesn’t want to break your website.  It wants to be <em>able</em> to do it
+at any moment.</p>
+</div>
+<div class="section" id="a-cyberwarfare-weapon">
+<h3>A cyberwarfare weapon?</h3>
+<p>Probably…  It could also be a dissuasive weapon, like nuclear missiles.</p>
+<p>Do you know <a class="reference external" href="http://www.shodanhq.com/">Shodan</a>?
+It’s a very special search engine.
+It allows you to find extremely weak servers.
+Especially webcam servers without password or with default ones.</p>
+<p>That’s truly shocking, but you can spy people you don’t know, learn everything
+about their life, and they’re not even aware of being filmed.
+If you search and hack enough, I guess you can become the administrator
+of a few servers across the globe.</p>
+<p>Or you can even control <strong>power plants</strong>, as they’re proud to mention.
+That’s obviously not so easy, but it can be done.
+It was done in 2010, when <a class="reference external" href="http://en.wikipedia.org/wiki/Stuxnet">&quot;someone&quot; partially destroyed an Iranian
+nuclear plant</a>.</p>
+<p>As you may know, the US <abbr title="National Security Agency">NSA</abbr> <a class="reference external" href="http://en.wikipedia.org/wiki/NSA_ANT_catalog">exploits such
+vulnerabilities and even develops hardware</a> to make it easier for them
+to infiltrate any online computer.</p>
+<p>I honestly don’t have any proof, but I’m sure that China is doing exactly the
+same kind of spying &amp; infiltration with tools like Baidu.
+I don’t say that Baidu is a covering for illegal government operations.
+Maybe all this wasn’t Baidu, but another chinese bot pretending being Baidu.
+Or maybe Baidu is simply lead by a bunch of irresponsible hackers.</p>
+</div>
+</div>
+<div class="section" id="the-solution">
+<h2>The solution</h2>
+<p>Block Baidu, as I did.</p>
+<p>In Django, I simply made a middleware.
+Add <tt class="docutils literal">'your_project.middleware.ExcludeSuspiciousRequestsMiddleware',</tt> to your
+<tt class="docutils literal">MIDDLEWARE_CLASSES</tt> and put the following in <tt class="docutils literal">your_project/middleware.py</tt>:</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+
+
+<span class="n">BANNED_REFERERS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s">&#39;http://www.baidu.com&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">ExcludeSuspiciousRequestsMiddleware</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">process_request</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">META</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;HTTP_REFERER&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span> <span class="ow">in</span> <span class="n">BANNED_REFERERS</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span>
+                <span class="s">&#39;You have been banned from our server. If you think this is a &#39;</span>
+                <span class="s">&#39;miscarriage of justice, ask the admin on &#39;</span>
+                <span class="s">&#39;&lt;a href=&quot;mailto:%(@)s&quot;&gt;%(@)s&lt;/a&gt;.&#39;</span>
+                <span class="o">%</span> <span class="p">{</span><span class="s">&#39;@&#39;</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">ADMINS</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]},</span> <span class="n">status</span><span class="o">=</span><span class="mi">403</span><span class="p">)</span>
+</pre></div>
+</div>
+
+    </div>
+
+  </article>
+
+    <hr />
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            var disqus_shortname = 'bertrandbordage';
+            var disqus_identifier = 'baidu-illegal-activities';
+            var disqus_url = 'http://blog.bordage.pro/baidu-illegal-activities/';
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+
+    </section>
+
+    <footer>
+<nav class="navbar navbar-default navbar-fixed-bottom footer" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse"
+              data-target="#footer-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <a class="navbar-brand" href="https://github.com/BertrandBordage/blog"
+           title="Source of this blog">
+          <i class="fa fa-code fa-fw fa-lg"></i>
+        </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="footer-collapse">
+      <ul class="nav navbar-nav navbar-left">
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="https://github.com/BertrandBordage" title="GitHub" class="hidden-xs">
+              <i class="fa fa-github fa-fw fa-lg"></i>
+            </a>
+            <a href="https://github.com/BertrandBordage" class="visible-xs">
+              <i class="fa fa-github fa-fw"></i> GitHub
+            </a>
+          </li>
+          <li>
+            <a href="https://www.gittip.com/BertrandBordage/" title="Gittip" class="hidden-xs">
+              <i class="fa fa-gittip fa-fw fa-lg"></i>
+            </a>
+            <a href="https://www.gittip.com/BertrandBordage/" class="visible-xs">
+              <i class="fa fa-gittip fa-fw"></i> Gittip
+            </a>
+          </li>
+          <li>
+            <a href="https://bitbucket.org/bbordage" title="Bitbucket" class="hidden-xs">
+              <i class="fa fa-bitbucket fa-fw fa-lg"></i>
+            </a>
+            <a href="https://bitbucket.org/bbordage" class="visible-xs">
+              <i class="fa fa-bitbucket fa-fw"></i> Bitbucket
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/bertrand.bordage" title="Facebook" class="hidden-xs">
+              <i class="fa fa-facebook fa-fw fa-lg"></i>
+            </a>
+            <a href="https://www.facebook.com/bertrand.bordage" class="visible-xs">
+              <i class="fa fa-facebook fa-fw"></i> Facebook
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/BertrandBordage" title="Twitter" class="hidden-xs">
+              <i class="fa fa-twitter fa-fw fa-lg"></i>
+            </a>
+            <a href="https://twitter.com/BertrandBordage" class="visible-xs">
+              <i class="fa fa-twitter fa-fw"></i> Twitter
+            </a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</nav>    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script>
+      $(function () {
+        $('[title]').tooltip();
+      })
+    </script>
+
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44531910-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+  <script type="text/javascript">
+    var disqus_shortname = 'bertrandbordage';
+
+    (function () {
+      var s = document.createElement('script');
+      s.async = true;
+      s.type = 'text/javascript';
+      s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+  </script>
+
+  </body>
+</html>

@@ -1,8 +1,8 @@
 @import 'bootstrap';
-@import '../Font-Awesome/less/font-awesome';
+@import '../../Font-Awesome/less/font-awesome';
 @import '../css/pygment.css';
 
-@fa-font-path: '../Font-Awesome/fonts';
+@fa-font-path: '../';
 
 html {
   position: relative;
@@ -17,12 +17,19 @@ body {
 .docutils.literal {
   font-family: @font-family-monospace;
   padding: 1px 4px;
-  font-size: @font-size-base - 1;
+  font-size: 93%;
   word-wrap: break-word;
   color: @pre-color;
   background-color: @pre-bg;
   border: 1px solid @pre-border-color;
   border-radius: @border-radius-base;
+}
+
+table.docutils {
+  border: none;
+  th, td {
+    border: none;
+  }
 }
 
 // FIXME: This is a copy of the .table styling of Bootstrap.

@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Bertrand Bordage</title><link href="http://blog.bordage.pro/" rel="alternate"></link><link href="http://blog.bordage.pro/feeds/development.atom.xml" rel="self"></link><id>http://blog.bordage.pro/</id><updated>2014-07-30T00:00:00+02:00</updated><entry><title>Avoid docker-py</title><link href="http://blog.bordage.pro/avoid-docker-py/" rel="alternate"></link><updated>2014-07-30T00:00:00+02:00</updated><author><name>Bertrand Bordage</name></author><id>tag:blog.bordage.pro,2014-07-27:avoid-docker-py/</id><summary type="html">&lt;div class="section" id="whats-docker"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Bertrand Bordage</title><link href="http://blog.bordage.pro/" rel="alternate"></link><link href="http://blog.bordage.pro/feeds/development.atom.xml" rel="self"></link><id>http://blog.bordage.pro/</id><updated>2015-02-23T00:00:00+01:00</updated><entry><title>Django-cachalot 1.0.0 release candidate</title><link href="http://blog.bordage.pro/django-cachalot-rc/" rel="alternate"></link><updated>2015-02-23T00:00:00+01:00</updated><author><name>Bertrand Bordage</name></author><id>tag:blog.bordage.pro,2015-02-23:django-cachalot-rc/</id><summary type="html">&lt;p&gt;Hi,&lt;/p&gt;
+&lt;p&gt;I’m Bertrand, the creator of &lt;a class="reference external" href="https://github.com/BertrandBordage/django-cachalot"&gt;django-cachalot&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It’s been 5 months since I started this project,
+and it’s now ready for a safe production use.
+However, I want cachalot to be perfect.&lt;/p&gt;
+&lt;p&gt;That’s why I just uploaded to PyPI a release candidate for cachalot 1.0.0.
+&lt;strong&gt;I need your help to test it.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You can even &lt;strong&gt;earn 30 €&lt;/strong&gt; by reporting an invalidation issue!
+But you have to be quick: 1.0.0 will be released &lt;strong&gt;15 March 2015&lt;/strong&gt;
+if no invalidation issue is found.&lt;/p&gt;
+&lt;p&gt;I need you to:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://django-cachalot.readthedocs.org/en/latest/quickstart.html"&gt;install cachalot&lt;/a&gt; on your development server&lt;/li&gt;
+&lt;li&gt;open a page of your project where you use a complex query&lt;/li&gt;
+&lt;li&gt;change something that should change the displayed result of the complex query&lt;/li&gt;
+&lt;li&gt;refresh the page with the complex query to see if the displayed result has changed as expected&lt;/li&gt;
+&lt;li&gt;if not, &lt;a class="reference external" href="https://github.com/BertrandBordage/django-cachalot/issues/new"&gt;create a new GitHub issue&lt;/a&gt;
+with a minimal example, and I’ll send you 30 € if I or someone else
+can reproduce the bug&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;Regards,&lt;/div&gt;
+&lt;div class="line"&gt;Bertrand&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="django"></category><category term="django-cachalot"></category></entry><entry><title>Avoid docker-py</title><link href="http://blog.bordage.pro/avoid-docker-py/" rel="alternate"></link><updated>2014-07-30T00:00:00+02:00</updated><author><name>Bertrand Bordage</name></author><id>tag:blog.bordage.pro,2014-07-27:avoid-docker-py/</id><summary type="html">&lt;div class="section" id="whats-docker"&gt;
 &lt;h2&gt;What’s Docker?&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="https://www.docker.com/"&gt;Docker&lt;/a&gt; allows you to easily deploy
 a web application anywhere without worrying about which OS or libraries are
@@ -88,57 +112,7 @@ with a time limit of 2 seconds:&lt;/p&gt;
 docker run --rm ubuntu:14.04 python3 -c [some_code_here]
 &lt;/pre&gt;
 &lt;p&gt;And ended up with something like this:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;contextlib&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;contextmanager&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;contextlib&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;contextmanager&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;signal&lt;/span&gt;
 
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;docker&lt;/span&gt;
@@ -190,7 +164,7 @@ docker run --rm ubuntu:14.04 python3 -c [some_code_here]
 &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="n"&gt;execute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;print(&amp;#39;test1&amp;#39;)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;test1&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt;
 &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="n"&gt;execute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;while True: print(&amp;#39;test2&amp;#39;)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;startswith&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;test2&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;At least I had a working version!  Docker was still throwing me some random
+&lt;p&gt;At least I had a working version!  Docker was still throwing me some random
 warning, but I got what I wanted.&lt;/p&gt;
 &lt;p&gt;But then something wonderful happened! A docker-py update!  Version 0.3.2,
 that should be a few bugfixes.  In my case it wasn’t, I had different bugs.
@@ -208,36 +182,7 @@ I was using Docker 1.0.0, and therefore API version 1.12.&lt;/p&gt;
 docker-py away in favour of a classical &lt;tt class="docutils literal"&gt;subprocess.Popen&lt;/tt&gt;.  It took me an
 hour to get exactly what I wanted.&lt;/p&gt;
 &lt;p&gt;And it consists in fewer lines:&lt;/p&gt;
-&lt;table class="highlighttable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt; 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;subprocess&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Popen&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;PIPE&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;subprocess&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Popen&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;PIPE&lt;/span&gt;
 
 
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;kill_and_remove&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ctr_name&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
@@ -268,7 +213,7 @@ hour to get exactly what I wanted.&lt;/p&gt;
 &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="n"&gt;execute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;print(&amp;#39;test1&amp;#39;)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;test1&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt;
 &lt;span class="k"&gt;assert&lt;/span&gt; &lt;span class="n"&gt;execute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;while True: print(&amp;#39;test2&amp;#39;)&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;startswith&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;test2&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
-&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="section" id="conclusion"&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;

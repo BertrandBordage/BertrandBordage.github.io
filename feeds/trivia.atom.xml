@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Bertrand Bordage</title><link href="http://blog.bordage.pro/" rel="alternate"></link><link href="http://blog.bordage.pro/feeds/trivia.atom.xml" rel="self"></link><id>http://blog.bordage.pro/</id><updated>2014-09-23T00:00:00+02:00</updated><entry><title>Baidu illegal activities</title><link href="http://blog.bordage.pro/baidu-illegal-activities/" rel="alternate"></link><updated>2014-09-23T00:00:00+02:00</updated><author><name>Bertrand Bordage</name></author><id>tag:blog.bordage.pro,2014-09-23:baidu-illegal-activities/</id><summary type="html">&lt;div class="section" id="the-facts"&gt;
+&lt;h2&gt;The facts&lt;/h2&gt;
+&lt;div class="section" id="whats-baidu"&gt;
+&lt;h3&gt;What’s Baidu?&lt;/h3&gt;
+&lt;p&gt;Baidu is &lt;a class="reference external" href="http://chineseseoshifu.com/blog/top-5-chinese-search-engines.html"&gt;the most widely&lt;/a&gt;
+used search engine in China.
+As far as I know, it’s as popular in China as Google is in western countries.
+Like any other search engine, Baidu has thousands of bots crawling the web
+in order to index everything.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="and-why-do-i-care-about-it"&gt;
+&lt;h3&gt;And why do I care about it?&lt;/h3&gt;
+&lt;p&gt;In my daily job, I read dozens of log entries reporting errors, dead links, and
+suspicious operations.  In my case, suspicious operations means attempts of
+&lt;a class="reference external" href="http://en.wikipedia.org/wiki/Spoofing_attack"&gt;IP &amp;amp; referer spoofing&lt;/a&gt;,
+&lt;a class="reference external" href="http://en.wikipedia.org/wiki/Denial-of-service_attack"&gt;(D)DOS&lt;/a&gt;,
+and vulnerable software discovery.  The latter means that a bot or someone asks
+for pages containing a proof that you use a given version of WordPress, VTiger,
+PHPMyAdmin, or any other widely used and quite vulnerable tool.&lt;/p&gt;
+&lt;p&gt;Most of the time, those reports are triggered by search engine bots like
+Google, Bing, Yahoo, or the awful
+&lt;abbr title="Bibliothèque nationale de France"&gt;BnF&lt;/abbr&gt; bot (it fails to rebuild a lot
+of URLs from relative links…).&lt;/p&gt;
+&lt;p&gt;Being indexed by a search engine is generally considered as a good thing:
+if your website can’t be found in a simple query on any major search engine,
+nobody will reach it.&lt;/p&gt;
+&lt;p&gt;If your website has an international scope, being indexed by Baidu may be
+important, as 500 million people probably use it as their browser homepage.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="baidu-crawls-way-too-much"&gt;
+&lt;h3&gt;Baidu crawls… Way too much.&lt;/h3&gt;
+&lt;p&gt;Some nights like tonight, Santa Baidu comes down the chimney and leaves its
+marvellous presents in my mailbox.
+&lt;strong&gt;Thousands of suspicious operations alerts!&lt;/strong&gt;
+Cool, it brought me fifty strange requests per minute during all the night!
+And even more impressive, each one is different!&lt;/p&gt;
+&lt;p&gt;It starts with a classical &lt;tt class="docutils literal"&gt;/robots.txt&lt;/tt&gt;, the best way to find weak points you
+shouldn’t look at.&lt;/p&gt;
+&lt;p&gt;And then it starts spamming stupid PHP/ASP/JSP requests.
+I never even used one of these!  Baidu, you offend me.
+Here’s a tiny sample of what it asks:&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+/do/reg.php
+/wp-content/themes/twentyten/style.css
+/lionsky_client/WebHtmlEditor/1_7_2006_1020/Theme/Office_Tinge/WebHtmlEditor.css
+/ask
+/admin/help/online_help_1.htm
+/Providers/HtmlEditorProviders/Fck/fcklinkgallery.aspx
+/安装说明.txt
+/data/config.js
+/jsp/cis4/js/common/CTRSHTMLElement.js
+/digg.php
+/plugin/backupdb/plugin.xml
+/siteserver/login.aspx
+/a_d/install/data.sql
+/admin/tpls/tpls/main/default/index.tpl
+/ThinkPHP/LICENSE.txt
+/install/data/sql/db_full.sql
+/wcm/app/js/source/wcmlib/WCMConstants.js
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="an-explanation"&gt;
+&lt;h2&gt;An explanation&lt;/h2&gt;
+&lt;div class="section" id="is-that-so-important"&gt;
+&lt;h3&gt;Is that so important?&lt;/h3&gt;
+&lt;p&gt;Yes.&lt;/p&gt;
+&lt;p&gt;Regular search engine bots don’t do that.  They don’t ask for tens of thousands
+of pages in a few hours.  They don’t go to a page that isn’t mentioned
+by any other page.&lt;/p&gt;
+&lt;p&gt;One could argue that it’s not dangerous since these are just regular
+HTTP requests: no code injection, no denial of service, no IP spoofing, etc.
+That’s right.  And that’s why it’s even more dangerous: Baidu obviously has
+a tremendous catalog of software footprints.  Without a single link to those
+pages, it knows exactly where to look to know if you’re running PHP, ASP, JSP,
+which libraries, and more important, which version of all these.&lt;/p&gt;
+&lt;p&gt;Of course, these data are totally useless for a search engine; except if it’s
+able to tell the user whether a website is technically trustworthy.
+But that’s very unlikely.  So why all this?&lt;/p&gt;
+&lt;p&gt;Baidu doesn’t want to break your website.  It wants to be &lt;em&gt;able&lt;/em&gt; to do it
+at any moment.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="a-cyberwarfare-weapon"&gt;
+&lt;h3&gt;A cyberwarfare weapon?&lt;/h3&gt;
+&lt;p&gt;Probably…  It could also be a dissuasive weapon, like nuclear missiles.&lt;/p&gt;
+&lt;p&gt;Do you know &lt;a class="reference external" href="http://www.shodanhq.com/"&gt;Shodan&lt;/a&gt;?
+It’s a very special search engine.
+It allows you to find extremely weak servers.
+Especially webcam servers without password or with default ones.&lt;/p&gt;
+&lt;p&gt;That’s truly shocking, but you can spy people you don’t know, learn everything
+about their life, and they’re not even aware of being filmed.
+If you search and hack enough, I guess you can become the administrator
+of a few servers across the globe.&lt;/p&gt;
+&lt;p&gt;Or you can even control &lt;strong&gt;power plants&lt;/strong&gt;, as they’re proud to mention.
+That’s obviously not so easy, but it can be done.
+It was done in 2010, when &lt;a class="reference external" href="http://en.wikipedia.org/wiki/Stuxnet"&gt;&amp;quot;someone&amp;quot; partially destroyed an Iranian
+nuclear plant&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As you may know, the US &lt;abbr title="National Security Agency"&gt;NSA&lt;/abbr&gt; &lt;a class="reference external" href="http://en.wikipedia.org/wiki/NSA_ANT_catalog"&gt;exploits such
+vulnerabilities and even develops hardware&lt;/a&gt; to make it easier for them
+to infiltrate any online computer.&lt;/p&gt;
+&lt;p&gt;I honestly don’t have any proof, but I’m sure that China is doing exactly the
+same kind of spying &amp;amp; infiltration with tools like Baidu.
+I don’t say that Baidu is a covering for illegal government operations.
+Maybe all this wasn’t Baidu, but another chinese bot pretending being Baidu.
+Or maybe Baidu is simply lead by a bunch of irresponsible hackers.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="the-solution"&gt;
+&lt;h2&gt;The solution&lt;/h2&gt;
+&lt;p&gt;Block Baidu, as I did.&lt;/p&gt;
+&lt;p&gt;In Django, I simply made a middleware.
+Add &lt;tt class="docutils literal"&gt;'your_project.middleware.ExcludeSuspiciousRequestsMiddleware',&lt;/tt&gt; to your
+&lt;tt class="docutils literal"&gt;MIDDLEWARE_CLASSES&lt;/tt&gt; and put the following in &lt;tt class="docutils literal"&gt;your_project/middleware.py&lt;/tt&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.conf&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;settings&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;django.http&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;HttpResponse&lt;/span&gt;
+
+
+&lt;span class="n"&gt;BANNED_REFERERS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="s"&gt;&amp;#39;http://www.baidu.com&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;ExcludeSuspiciousRequestsMiddleware&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="nd"&gt;@staticmethod&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;process_request&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;META&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;HTTP_REFERER&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;BANNED_REFERERS&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;HttpResponse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+                &lt;span class="s"&gt;&amp;#39;You have been banned from our server. If you think this is a &amp;#39;&lt;/span&gt;
+                &lt;span class="s"&gt;&amp;#39;miscarriage of justice, ask the admin on &amp;#39;&lt;/span&gt;
+                &lt;span class="s"&gt;&amp;#39;&amp;lt;a href=&amp;quot;mailto:%(@)s&amp;quot;&amp;gt;%(@)s&amp;lt;/a&amp;gt;.&amp;#39;&lt;/span&gt;
+                &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;@&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;settings&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ADMINS&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]},&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;403&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+</summary><category term="security"></category><category term="search engine"></category></entry></feed>
